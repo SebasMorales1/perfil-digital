@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil digital personal y profesional - Blog</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header_content container">
+            <div class="logo_container">
+                <span class="logo">S</span>
+            </div>
+
+            <nav class="nav">
+                <ul class="nav_links">
+                    <li class="nav_link"><a href="../">Inicio</a></li>
+                    <li class="nav_link"><a href="../#about_me"><img class="link_logo" src="../media/person.svg" alt="person logo">
+                            Sobre mi</a></li>
+                    <li class="nav_link"><a href="../#education"><img class="link_logo" src="../media/book.svg" alt="book logo">
+                            Educación</a></li>
+                    <li class="nav_link"><a href="../#projects"><img class="link_logo" src="../media/laptop.svg" alt="laptop logo">
+                            Proyectos</a></li>
+                    <li class="nav_link"><a href="../#contact"><img class="link_logo" src="../media/telephone.svg"
+                                alt="telephone logo"> Contacto</a></li>
+                    <li class="nav_link"><a href="#" class="blog"><img class="link_logo" src="../media/substack.svg"
+                                alt="substack logo"> Blog</a></li>
+                </ul>
+            </nav>
+
+            <button class="btn_hamburger">
+                <img class="hamburger_icon" src="../media/list.svg" alt="list logo">
+            </button>
+        </div>
+    </header>
+    <div class="banner">
+        <div class="container">
+            <h1>Blog</h1>
+        </div>
+    </div>
+
+    <section class="about" id="projects">
+            <div class="container">
+                <h2 class="title"><span>&lt;</span> Proyectos <span>/&gt;</span></h2>
+
+                <div class="projects">
+                    <article class="project">
+                        <img src="../media/blog_image_1.png" alt="robots de competencia" class="project_img">
+                        <h3><a href="como_usar_la_ia_para_programar.html">Como usar la IA para programar</a></h3>
+                        <p>¿Alguna vez te haz preguntado cómo usar la IA para programar? Sin sentir que hace todo, o que te confunde más con lo que le pides. En este articulo te doy una serie de tips para darle un uso más eficiente.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    <script>
+        const nav = document.getElementsByClassName("nav")[0]
+        const btn = document.getElementsByClassName("btn_hamburger")[0]
+        const showMore = document.getElementsByClassName("show-more")
+        const imgs = document.getElementsByClassName("education_img")
+
+        let state = false;
+
+        document.addEventListener("click", (e) => {
+            if (e.target !== btn.children[0] && e.target !== nav) {
+                nav.style.right = "-100%";
+                state = false;
+            }
+        })
+
+        btn.addEventListener("click", (_) => {
+            state = !state
+
+            if (state) {
+                nav.style.right = "0";
+            }
+            else {
+                nav.style.right = "-100%";
+            }
+        })
+
+        for (let i = 0; i<showMore.length; i++) {
+            let s = false
+
+            showMore.item(i).addEventListener("click", () => {
+                s = !s
+                
+                if (s) {
+                    imgs.item(i).style.display = "block"
+                }
+                else {
+                    imgs.item(i).style.display = "none"
+                }
+            })
+        }
+    </script>
+</body>
+</html>

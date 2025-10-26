@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Como usar la IA para programar</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header_content container">
+            <div class="logo_container">
+                <span class="logo">S</span>
+            </div>
+
+            <nav class="nav">
+                <ul class="nav_links">
+                    <li class="nav_link"><a href="../">Inicio</a></li>
+                    <li class="nav_link"><a href="../#about_me"><img class="link_logo" src="../media/person.svg" alt="person logo">
+                            Sobre mi</a></li>
+                    <li class="nav_link"><a href="../#education"><img class="link_logo" src="../media/book.svg" alt="book logo">
+                            Educación</a></li>
+                    <li class="nav_link"><a href="../#projects"><img class="link_logo" src="../media/laptop.svg" alt="laptop logo">
+                            Proyectos</a></li>
+                    <li class="nav_link"><a href="../#contact"><img class="link_logo" src="../media/telephone.svg"
+                                alt="telephone logo"> Contacto</a></li>
+                    <li class="nav_link"><a href="./" class="blog"><img class="link_logo" src="../media/substack.svg"
+                                alt="substack logo"> Blog</a></li>
+                </ul>
+            </nav>
+
+            <button class="btn_hamburger">
+                <img class="hamburger_icon" src="../media/list.svg" alt="list logo">
+            </button>
+        </div>
+    </header>
+    <div class="banner">
+        <div class="container">
+            <h1>Como usar la IA para programar</h1>
+        </div>
+    </div>
+
+    <main class="main container">
+        <p>
+            La programación con la asistencia de inteligencia artificial (IA) no es una tarea trivial. Con frecuencia, al buscar desarrollar un proyecto con esta tecnología, el resultado inicial puede no ser el esperado. Por ello, se presentan a continuación algunas recomendaciones clave para mejorar la eficiencia del proceso:
+        </p>
+
+        <div class="img_container">
+            <img src="media/article_img_1.png" alt="IA image">
+        </div>
+
+        <ul class="u_list">
+            <li class="l_element">
+                <p><strong>Contar con conocimientos técnicos:</strong> Es fundamental poseer una base de conocimientos en programación para poder corregir el código generado por la IA y guiarla de manera efectiva hacia la solución deseada.</p>
+            </li>
+            <li class="l_element">
+                <p><strong>Solicitar código en bloques:</strong> En lugar de pedirle a la IA que desarrolle una aplicación completa, es más productivo solicitar el código por partes o módulos. Por ejemplo, para una aplicación de pagos con PayPal, se puede empezar pidiendo el código para la autenticación de usuarios, luego la validación de credenciales de pago, y así sucesivamente con cada funcionalidad.</p>
+            </li>
+            <li class="l_element">
+                <p><strong>Proporcionar un contexto detallado:</strong> Es crucial darle a la IA un contexto claro del proyecto. Esto le permitirá comprender el objetivo de la aplicación y, más adelante, integrar las diferentes funcionalidades de una forma más eficiente.</p>
+            </li>
+        </ul>
+    </main>
+
+    <script>
+        const nav = document.getElementsByClassName("nav")[0]
+        const btn = document.getElementsByClassName("btn_hamburger")[0]
+        const showMore = document.getElementsByClassName("show-more")
+        const imgs = document.getElementsByClassName("education_img")
+
+        let state = false;
+
+        document.addEventListener("click", (e) => {
+            if (e.target !== btn.children[0] && e.target !== nav) {
+                nav.style.right = "-100%";
+                state = false;
+            }
+        })
+
+        btn.addEventListener("click", (_) => {
+            state = !state
+
+            if (state) {
+                nav.style.right = "0";
+            }
+            else {
+                nav.style.right = "-100%";
+            }
+        })
+
+        for (let i = 0; i<showMore.length; i++) {
+            let s = false
+
+            showMore.item(i).addEventListener("click", () => {
+                s = !s
+                
+                if (s) {
+                    imgs.item(i).style.display = "block"
+                }
+                else {
+                    imgs.item(i).style.display = "none"
+                }
+            })
+        }
+    </script>
+</body>
+</html>
