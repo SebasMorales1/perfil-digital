@@ -159,7 +159,7 @@ button {
 }
 
 .home_img {
-    max-width: 400px;
+    width: 100%;
     outline: 2px solid orange;
 }
 
@@ -306,6 +306,7 @@ button {
     background-color: #222;
     padding: 10px;
     border-radius: 5px;
+    box-shadow: 1px 2px 2px orange;
 }
 
 .project img {
@@ -334,6 +335,62 @@ button {
 
 .project_footer a {
     color: orange;
+}
+
+.contact {
+    margin-bottom: 3em;
+}
+
+.contact_tel {
+    color: white;
+    display: inline-flex;
+    gap: 0.5em;
+    text-decoration: none;
+    margin-bottom: 2em;
+}
+
+.contact_tel img {
+    filter: invert();
+}
+
+.form {
+    width: 100%;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 1.5em 1em;
+    box-shadow: -1px 2px 2px orange;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 1.5em;
+}
+
+.form input, textarea {
+    background: #333;
+    border: none;
+    padding: 0.5em 1em;
+    color: white;
+}
+
+.form textarea {
+    height: 12em;
+}
+
+.form input:enabled, textarea:enabled {
+    outline: none;
+}
+
+.form button {
+    border: none;
+    background: orange;
+    padding: 0.5em 1em;
+    color: white;
+    font-size: 0.9em;
+    transition: 0.3s;
+}
+
+.form button:hover {
+    background-color: rgb(214, 141, 5);
 }
 
 @media (min-width: 854px) {
@@ -383,11 +440,15 @@ button {
         flex-direction: row;
         gap: 40px;
     }
+
+    .form {
+        width: 60%;
+    }
 }
 
 @media (min-width: 500px) {
     .home_img {
-        width: 60%;
+        max-width: 400px;
     }
 
     .title {
