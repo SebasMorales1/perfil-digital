@@ -7,9 +7,7 @@
 }
 
 html { 
-    width: 100vw;
     scroll-behavior: smooth;
-    overflow-x: hidden;
 }
 
 body {
